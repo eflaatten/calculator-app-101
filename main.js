@@ -6,7 +6,8 @@ let operation = null
 
 // this function takes in the number you type in the input field and saves it to the "firstNum" variable
 const saveFirstNumber = (num) => {
-  firstNum = parseInt(num)  
+  firstNum = parseInt(num)
+  console.log(firstNum)
 }
 
 // this function takes in the number you type in the 2nd input field and saves it to the "secondNum" variable
@@ -14,6 +15,20 @@ const saveSecondNumber = (num) => {
   // "parseInt" is a built in function in JS that converts a string/word into a number
   secondNum = parseInt(num)
 }
+
+var input = document.getElementById("input"),
+    number = document.querySelectorAll(".numbers-container"),
+    operators = document.querySelectorAll(".operators-container"),
+    reset = document.getElementById("reset"),
+    equal = document.getElementById("equals"),
+    resultDisplayed = false;
+
+number[i].addEventListener("click", function(e) {
+  var currentString = input.innerHTML;
+  var lastChar = currentString[currentString.length - 1];
+
+  
+})
 
 // this function takes in two argument/numbers and returns the sum of them
 const add = (numA, numB) => {

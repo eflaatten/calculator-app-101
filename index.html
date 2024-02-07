@@ -4,29 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <!-- <script src="main.js"></script> -->
+  <script src="main.js"></script>
   <title>Document</title>
 </head>
 <body>
   <form class="calculator">
-    <label for="first-number">First Number:</label>
-    <!-- the "onkeyup" event listener passes its input's "value" to the "saveFirstNumber" function in the main.js file -->
-    <input type="number" id="first-Number" name="first-Number" placeholder="type the first number" value="" onkeyup="saveFirstNumber(this.value)">
-    <label for="second-number">Second Number:</label>
-    <input type="number" id="second-Number" name="second-Number" placeholder="type the second number" onkeyup="saveSecondNumber(this.value)">
-    <div>
+    <div class="main-container">
+      
+      <div class="input-container">
+        <!-- the "onkeyup" event listener passes its input's "value" to the "saveFirstNumber" function in the main.js file -->
+        <!-- <input type="number" id="first-Number" name="first-Number" placeholder="type the first number" value="" onkeyup="saveFirstNumber(this.value)">
+          <input type="number" id="second-Number" name="second-Number" placeholder="type the second number" onkeyup="saveSecondNumber(this.value)"> -->
+        </div>
+
+      <div id="input"></div>
+      <div id="result"></div>
+      
+      <div class="numbers-container">
+        <button type="button" name="nine" id="nine">9</button>
+        <button type="button" name="eight" id="eight">8</button>
+        <button type="button" name="seven" id="seven">7</button>
+        <button type="button" name="six" id="six">6</button>
+        <button type="button" name="five" id="five">5</button>
+        <button type="button" name="four" id="four">4</button>
+        <button type="button" name="three" id="three">3</button>
+        <button type="button" name="two" id="two">2</button>
+        <button type="button" name="one" id="one">1</button>
+        <button type="button" name="zero" id="zero">0</button>
+        <button type="reset" id="reset">C</button>
+      </div>
       <!-- the "onclick" event listener passes its element's "id" to the "changeOperation" function in the main.js file -->
-      <button type="button" name="add" id="addition" onclick="changeOperation(this.id)">Add</button>
-      <button type="button" name="subtract" id="subtraction" onclick="changeOperation(this.id)">Subtract</button>
-      <button type="button" name="multiply" id="multiplication">Multiply</button>
-      <button type="button" name="divide" id="division">Divide</button>
-      <button type="button" name="modulus" id="modulus">Modulus</button>
+      <button type="button" name="add" id="addition" onclick="changeOperation(this.id)">+</button>
+      <button type="button" name="subtract" id="subtraction" onclick="changeOperation(this.id)">-</button>
+      <button type="button" name="multiply" id="multiplication">&times;</button>
+      <button type="button" name="divide" id="division">&divide;</button>
+      <button type="button" name="modulus" id="modulus">%</button>
+      <!-- this "onclick" calls the "equal" function in the main.js file -->
+      <button type="button" id="equals" onclick="equals()">=</button>
     </div>
     <br>
-    <!-- this "onclick" calls the "equal" function in the main.js file -->
-    <button type="button" onclick="equals()">Equals</button>
-    <button type="reset">Clear</button>
   </form>
-  <div id="result"></div>
 </body>
 </html>
