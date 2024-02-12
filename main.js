@@ -26,8 +26,6 @@ clearInput = () => {
   })
 }
 
-// Operators functionality
-
 addOperator = () => {
   const operatorButtons = document.querySelectorAll('.operators-container button')
   
@@ -41,9 +39,8 @@ addOperator = () => {
 
 calculate = () => {
   const inputField = document.getElementById('input')
-  // const expression = inputField.innerText
+
   let expression = inputField.innerText.replace(/×/g, '*').replace(/÷/g, '/')
-  const resultField = document.getElementById('result')
 
   if(expression !== '') {
     let result
@@ -54,13 +51,12 @@ calculate = () => {
       result = divide(expression)
     } else if (expression.includes('%')) {
       result = modulus(expression)
+    } else if (expression.includes('+')) {
+      result = add(expression)
+    } else if (expression.includes('-')) {
+      result = subtract(expression)
     }
-    try {
-      result = eval(expression)
-    } catch (error) {
-      console.error('Error during evaluation:', error)
-      result = 'Error'
-    }
+
     inputField.innerText = result
     console.log("The expression is: ", expression, " The reuslt is: ", result)
   }
@@ -74,25 +70,34 @@ equals = () => {
   })
 }
 
+add = (expression) => {
+  const operands = expression.split('+').map(Number)
+  return operands.reduce((acc, curr) => acc + curr)
+}
+
+subtract = (expression) => {
+  const operands = expression.split('-').map(Number)
+  return operands.reduce((acc, curr) => acc - curr)
+}
+
 multiply = (expression) => {
-  const operands = expression.split('*').map(Number);
-  return operands.reduce((acc, curr) => acc * curr, 1);
-};
+  const operands = expression.split('*').map(Number)
+  return operands.reduce((acc, curr) => acc * curr, 1)
+}
 
 divide = (expression) => {
-  const operands = expression.split('/').map(Number);
-  return operands.reduce((acc, curr) => acc / curr);
-};
+  const operands = expression.split('/').map(Number)
+  return operands.reduce((acc, curr) => acc / curr)
+}
 
 modulus = (expression) => {
-  const operands = expression.split('%').map(Number);
-  return operands.reduce((acc, curr) => acc % curr);
-};
+  const operands = expression.split('%').map(Number)
+  return operands.reduce((acc, curr) => acc % curr)
+}
 
 
 document.addEventListener('DOMContentLoaded', () => {
   const inputField = document.getElementById('input')
-  const resultField = document.getElementById('result')
   inputField.innerText = ''
 
   addNumber()
@@ -101,16 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
   equals()
 
 })
-
-
-
-
-
-
-
-
-
-
 
 
 
