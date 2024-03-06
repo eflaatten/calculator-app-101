@@ -1,13 +1,7 @@
 body {
-  margin: 20% auto;
-  width: 40%;
-  height: 70%;
-  background-color: #e5e5f7;
-  background-color: #000000;
-  opacity: 0.9;
-  background-image: radial-gradient(#000dff 1.1500000000000001px, #000000 1.1500000000000001px);
-  background-size: 23px 23px;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: black;
 }
 
 form  {
@@ -34,7 +28,6 @@ header {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
   margin: 20px;
-
 }
 
 #addition, #subtraction, #multiplication, #division, #modulus, #equals, #reset{
@@ -62,7 +55,7 @@ header {
   grid-row: 3/9;
   display: grid;
   grid-template-rows: repeat(6, 1fr);
-
+  padding-top: 100px;
 }
 
 #equals {
@@ -75,6 +68,8 @@ header {
   grid-row: 2/9;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
+  height: 150%;
+  padding-bottom: 50px;
 }
 
 #one, #two, #three {
